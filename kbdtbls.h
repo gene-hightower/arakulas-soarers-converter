@@ -69,7 +69,7 @@
 /* keyboard codeset 1 -> HIDX translation table                              */
 /*****************************************************************************/
 // A_00ac 
-uint8_t PROGMEM kbd_ttbl_set1[0x80] =
+const uint8_t PROGMEM kbd_ttbl_set1[0x80] =
   {
   KEY_UNASSIGNED,      KEY_ESC,             KEY_1,           KEY_2,                // 00..03
   KEY_3,               KEY_4,               KEY_5,           KEY_6,                // 04..07
@@ -109,7 +109,7 @@ uint8_t PROGMEM kbd_ttbl_set1[0x80] =
 /* keyboard codeset 2 -> HIDX translation table                              */
 /*****************************************************************************/
 // A_012c
-uint8_t PROGMEM kbd_ttbl_set2[0x85] =
+const uint8_t PROGMEM kbd_ttbl_set2[0x85] =
   {
   KEY_OVERRUN_ERROR,   KEY_F9,              KEY_UNASSIGNED,  KEY_F5,               // 00..03
   KEY_F3,              KEY_F1,              KEY_F2,          KEY_F12,              // 04..07
@@ -151,7 +151,7 @@ uint8_t PROGMEM kbd_ttbl_set2[0x85] =
 /* keyboard codeset 4 (E0 + scan code) -> HIDX translation table             */
 /*****************************************************************************/
 // A_01b1
-uint8_t PROGMEM kbd_ttbl_set2ex[0x7f] =
+const uint8_t PROGMEM kbd_ttbl_set2ex[0x7f] =
   {
   KEY_UNASSIGNED,      KEY_UNASSIGNED,      KEY_UNASSIGNED,  KEY_UNASSIGNED,       // 00..03
   KEY_UNASSIGNED,      KEY_UNASSIGNED,      KEY_UNASSIGNED,  KEY_UNASSIGNED,       // 04..07
@@ -191,7 +191,7 @@ uint8_t PROGMEM kbd_ttbl_set2ex[0x7f] =
 /* keyboard codeset 3 -> HIDX translation table                              */
 /*****************************************************************************/
 // A_0230
-uint8_t PROGMEM kbd_ttbl_set3[0x85] =
+const uint8_t PROGMEM kbd_ttbl_set3[0x85] =
   {
   KEY_OVERRUN_ERROR,   KEY_EXTRA_F9,        KEY_UNASSIGNED,  KEY_EXTRA_F5,         // 00..03
   KEY_EXTRA_F3,        KEY_EXTRA_F1,        KEY_EXTRA_F2,    KEY_F1,               // 04..07

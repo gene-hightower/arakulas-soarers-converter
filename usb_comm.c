@@ -236,7 +236,7 @@ static const uint8_t PROGMEM endpoint_config_table[] =
 // spec and relevant portions of any USB class specifications!
 
 // A_036c
-static uint8_t PROGMEM device_descriptor[] = {
+static const uint8_t PROGMEM device_descriptor[] = {
 	18,					// bLength
 	1,					// bDescriptorType
 	0x00, 0x02,			// bcdUSB
@@ -255,7 +255,7 @@ static uint8_t PROGMEM device_descriptor[] = {
 
 #if INC_IF_BOOT
 // A_03f2:
-static uint8_t PROGMEM boot_hid_report_desc[] = {
+static const uint8_t PROGMEM boot_hid_report_desc[] = {
     0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
     0x09, 0x06,                    // USAGE (Keyboard)
     0xa1, 0x01,                    // COLLECTION (Application)
@@ -271,7 +271,7 @@ static uint8_t PROGMEM boot_hid_report_desc[] = {
 #if INC_IF_KBD
 // Keyboard Protocol 1, HID 1.11 spec, Appendix B, page 59-60
 // A_0419
-static uint8_t PROGMEM keyboard_hid_report_desc[] = {
+static const uint8_t PROGMEM keyboard_hid_report_desc[] = {
     0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
     0x09, 0x06,                    // USAGE (Keyboard)
     0xa1, 0x01,                    // COLLECTION (Application)
@@ -381,7 +381,7 @@ static uint8_t PROGMEM keyboard_hid_report_desc[] = {
 
 #if INC_IF_DBG
 // A_0404:
-static uint8_t PROGMEM debug_hid_report_desc[] = {
+static const uint8_t PROGMEM debug_hid_report_desc[] = {
     0x06, LSB(DEBUGHID_USAGE_PAGE), MSB(DEBUGHID_USAGE_PAGE), // Usage Page 0xFF31 (vendor defined)
 	0x09, DEBUGHID_USAGE,	// Usage 0x74
 	0xA1, 0x53,				// Collection 0x53
@@ -397,7 +397,7 @@ static uint8_t PROGMEM debug_hid_report_desc[] = {
 
 #if INC_IF_RAW
 // A_04f5
-static uint8_t PROGMEM rawhid_hid_report_desc[] = {
+static const uint8_t PROGMEM rawhid_hid_report_desc[] = {
 	0x06, LSB(RAWHID_USAGE_PAGE), MSB(RAWHID_USAGE_PAGE),
 	0x0A, LSB(RAWHID_USAGE), MSB(RAWHID_USAGE),
 	0xA1, 0x01,				// Collection 0x01
@@ -423,19 +423,19 @@ struct usb_string_descriptor_struct {
 	int16_t wString[];
 };
 // A_0511
-static struct usb_string_descriptor_struct PROGMEM string0 = {
+static const struct usb_string_descriptor_struct PROGMEM string0 = {
 	4,
 	3,
 	{0x0409}
 };
 // A_0515
-static struct usb_string_descriptor_struct PROGMEM string1 = {
+static const struct usb_string_descriptor_struct PROGMEM string1 = {
 	sizeof(STR_MANUFACTURER),
 	3,
 	STR_MANUFACTURER
 };
 // A_0525
-static struct usb_string_descriptor_struct PROGMEM string2 = {
+static const struct usb_string_descriptor_struct PROGMEM string2 = {
 	sizeof(STR_PRODUCT),
 	3,
 	STR_PRODUCT
@@ -473,7 +473,7 @@ static struct usb_string_descriptor_struct PROGMEM string2 = {
 #define RAWHID_HID_DESC_OFFSET   (CFG_DESC_SZ + BOOT_HID_DESC_SZ + KBD_HID_DESC_SZ + DBG_HID_DESC_SZ + IF_DESC_SZ)
 
 // A_037e
-static uint8_t PROGMEM config1_descriptor[CONFIG1_DESC_SIZE] = {
+static const uint8_t PROGMEM config1_descriptor[CONFIG1_DESC_SIZE] = {
 	// configuration descriptor, USB spec 9.6.3, page 264-266, Table 9-10
 	CFG_DESC_SZ, 		// bLength;
 	2,					// bDescriptorType: USBDESCR_CONFIG
@@ -617,7 +617,7 @@ static uint8_t PROGMEM config1_descriptor[CONFIG1_DESC_SIZE] = {
 
 // This table defines which descriptor data is sent for each specific
 // request from the host (in wValue and wIndex).
-static struct descriptor_list_struct {
+static const struct descriptor_list_struct {
 	uint16_t	wValue;
 	uint16_t	wIndex;
 	const uint8_t	*addr;

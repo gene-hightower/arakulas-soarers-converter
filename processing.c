@@ -1091,7 +1091,7 @@ switch (cur_commstate)
       case icInfo :          // get information ?
         // A_3012
         {
-        static uint8_t PROGMEM info_templ[] =  // A_060d
+        static const uint8_t PROGMEM info_templ[] =  // A_060d
           {
           0x03,
           PROTOCOL_VER, PROTOCOL_SUBVER,   // protocol version
