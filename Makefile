@@ -50,12 +50,12 @@
 #   TEENSYPP_1 ... Teensy++ (v1)
 #   TEENSYPP_2 ... Teensy++ 2.0
 
-LAYOUT = TEENSY_2
+LAYOUT = PRO_MICRO
 
 
 # List C source files here. (C dependencies are automatically generated.)
 SRC =	soarer.c \
-    salloc.c \
+	salloc.c \
 	usb_comm.c \
 	print.c \
 	processing.c
@@ -319,10 +319,10 @@ LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)
 # Type: avrdude -c ?
 # to get a full listing.
 #
-AVRDUDE_PROGRAMMER = stk500v2
+AVRDUDE_PROGRAMMER = avr109
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
-AVRDUDE_PORT = com1    # programmer connected to serial device
+AVRDUDE_PORT = /dev/ttyACM0    # programmer connected to USB device
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
