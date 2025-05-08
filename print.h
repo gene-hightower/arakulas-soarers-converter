@@ -9,7 +9,7 @@
 #define print(s) print_P(PSTR(s))
 #define pchar(c) usb_debug_putchar(c)
 
-void print_P(const char *s);
+void print_P(const char* s);
 void phex1(unsigned char c);
 void phex(unsigned char c);
 void phex16(unsigned int i);
